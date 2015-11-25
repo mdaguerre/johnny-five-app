@@ -17,7 +17,7 @@ This app is a proof of concept between a nodejs server with express and johnny-f
 ######First you have to download and install [node](https://nodejs.org) in your machine
 
 #####Install johnny-five
-	- npm install johnny-five
+	npm install johnny-five
 
 #####Install express
 	npm install express 
