@@ -12,18 +12,9 @@ var rgbLed;
 
 //On arduino board ready setup the led pins
 board.on("ready", function() {
-   blueLed  = new five.Led(13);
-   redLed   = new five.Led(11);
-
-   rgbLed = new five.Led.RGB({
-      pins: {
-        red: 'A5',
-        green: 'A4',
-        blue: 'A3'
-      }
-    });
-
-   rgbLed.strobe(500);
+   blueLed    = new five.Led(13);
+   greenLed   = new five.Led(12);
+   redLed     = new five.Led(11);
  });
 
 //Run the server in the port 3000
@@ -54,6 +45,7 @@ app.post('/action/:led/:action', function (req, res, next) {
 
   switch(requiredLed){
     case 'blue'   : led = blueLed;  break;
+    case 'green'  : led = greenLed; break;
     case 'red'    : led = redLed;   break;
   }
 

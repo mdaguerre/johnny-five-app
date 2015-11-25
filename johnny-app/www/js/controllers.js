@@ -28,16 +28,18 @@ angular.module('starter.controllers', [])
   $scope.greenLed = false;
   $scope.redLed = false;
 
-
+  postLedAction = function(led,action){
+    $.post('http://192.168.0.106:3000/action/'+led+'/'+action);
+  }
 
   $scope.toggleChangeBlue = function() {
 
     if($scope.blueLed == false){
       $scope.blueLed = true;
-      $.post('http://192.168.0.101:3000/action/blue/on');
+      postLedAction('blue','on');
     }else{
       $scope.blueLed = false;
-      $.post('http://192.168.0.101:3000/action/blue/off');
+      postLedAction('blue','off');
     }
   }
 
@@ -45,22 +47,22 @@ angular.module('starter.controllers', [])
 
     if($scope.greenLed == false){
       $scope.greenLed = true;
-      $.post('http://192.168.0.101:3000/action/green/on');
+      postLedAction('green','on');
     }else{
       $scope.greenLed = false;
-      $.post('http://192.168.0.101:3000/action/green/off');
+      postLedAction('green','off');
     }
   }
 
-    $scope.toggleChangeRed = function() {
+  $scope.toggleChangeRed = function() {
 
     if($scope.redLed == false){
       $scope.redLed = true;
-      $.post('http://192.168.0.101:3000/action/red/on');
+      postLedAction('red','on');
     }else{
       $scope.redLed = false;
-      $.post('http://192.168.0.101:3000/action/red/off');
+      postLedAction('red','off');
     }
-  }
+  }    
  
 });
