@@ -12,9 +12,9 @@ var rgbLed;
 
 //On arduino board ready setup the led pins
 board.on("ready", function() {
-   blueLed    = new five.Led(13);
-   greenLed   = new five.Led(12);
-   redLed     = new five.Led(11);
+   blueLed    = new five.Led(10);
+   greenLed   = new five.Led(9);
+   redLed     = new five.Led(6);
  });
 
 //Run the server in the port 3000
@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
 
 //Default route
 app.get('/', function (req, res, next) {
-  res.send('<h1>Hi!</h1>')
+  res.send('<h1>Hi!</h1>');
 });
 
 //Enpoint to turn on or of a led

@@ -51,4 +51,4 @@ Go to
 
 ##Arduino Setup
 
-![Schematics](http://s27.postimg.org/jfi8wdoab/Screen_Shot_2015_11_24_at_10_33_32_PM.png)
+![Schematics](http://s27.postimg.org/ba140yxwz/Screen_Shot_2015_11_25_at_12_02_04_AM.png)
