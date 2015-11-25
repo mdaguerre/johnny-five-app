@@ -48,6 +48,8 @@ Go to
 	
 **In this moment the browser should open with the ionic app running**
 
+#####Remember this is a very early proof of concept, the app only works in a local network, great things can be done
+
 
 ##Arduino Setup
 
