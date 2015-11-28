@@ -1,5 +1,6 @@
 var express = require('express');
 var five    = require("johnny-five");
+var Raspi   = require("raspi-io");
 
 var board   = new five.Board();
 var app     = express();  
