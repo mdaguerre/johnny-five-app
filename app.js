@@ -23,7 +23,7 @@ var board = new five.Board({
 });
 
 board.on("ready", function() {
-  var led = new five.Led("P1-13");
+  var led = new five.Led({ pin : "P1-13", board: board });
   led.blink();
 });
 
@@ -37,35 +37,35 @@ var server = app.listen(3000, function () {
   console.log('App listening at http://%s:%s', host, port);
 });
 
-//Setup the headers to allow CORS
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+// //Setup the headers to allow CORS
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
-//Default route
-app.get('/', function (req, res, next) {
-  res.send('<h1>Hi!</h1>');
-});
+// //Default route
+// app.get('/', function (req, res, next) {
+//   res.send('<h1>Hi!</h1>');
+// });
 
-//Enpoint to turn on or of a led
-app.post('/action/:led/:action', function (req, res, next) {
-  var led;
-  var requiredLed   = req.params.led;
-  var action        = req.params.action;
+// //Enpoint to turn on or of a led
+// app.post('/action/:led/:action', function (req, res, next) {
+//   var led;
+//   var requiredLed   = req.params.led;
+//   var action        = req.params.action;
 
-  switch(requiredLed){
-    case 'blue'   : led = blueLed;  break;
-    case 'green'  : led = greenLed; break;
-    case 'red'    : led = redLed;   break;
-  }
+//   switch(requiredLed){
+//     case 'blue'   : led = blueLed;  break;
+//     case 'green'  : led = greenLed; break;
+//     case 'red'    : led = redLed;   break;
+//   }
 
-  switch(action){
-  	case 'on' 	: led.on();   break;
-  	case 'off' 	: led.off();  break;
-  }
+//   switch(action){
+//   	case 'on' 	: led.on();   break;
+//   	case 'off' 	: led.off();  break;
+//   }
 
-  res.sendStatus(200);
-});
+//   res.sendStatus(200);
+// });
 
