@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
   $scope.redLed = false;
 
   postLedAction = function(led,action){
-    $.post('http://192.168.0.106:3000/action/'+led+'/'+action);
+    $.post('http://192.168.0.101:3000/action/'+led+'/'+action);
   }
 
   $scope.toggleChangeBlue = function() {

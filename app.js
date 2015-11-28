@@ -11,11 +11,22 @@ var redLed;
 var rgbLed;
 
 //On arduino board ready setup the led pins
+// board.on("ready", function() {
+//    blueLed    = new five.Led(10);
+//    greenLed   = new five.Led(9);
+//    redLed     = new five.Led(6);
+//  });
+
+var board = new five.Board({
+  io: new Raspi()
+});
+
 board.on("ready", function() {
-   blueLed    = new five.Led(10);
-   greenLed   = new five.Led(9);
-   redLed     = new five.Led(6);
- });
+  var led = new five.Led("P1-13");
+  led.blink();
+});
+
+
 
 //Run the server in the port 3000
 var server = app.listen(3000, function () {
