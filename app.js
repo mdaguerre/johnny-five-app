@@ -44,10 +44,10 @@ var server = app.listen(3000, function () {
 //   next();
 // });
 
-// //Default route
-// app.get('/', function (req, res, next) {
-//   res.send('<h1>Hi!</h1>');
-// });
+//Default route
+app.get('/', function (req, res, next) {
+  res.send('<h1>Hi!</h1>');
+});
 
 // //Enpoint to turn on or of a led
 // app.post('/action/:led/:action', function (req, res, next) {
